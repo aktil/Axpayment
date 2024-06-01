@@ -1,0 +1,11 @@
+<div *ngIf="payment; else noPayment">
+    <p>Пользователь: {{ payment.user.username }}</p>
+    <p>Сумма: {{ payment.amount }}</p>
+    <p>Статус: {{ payment.status }}</p>
+    <img *ngIf="payment.qr_code" [src]="payment.qr_code" alt="QR Code" style="width: 200px; height: 200px; border: 1px solid #000;">
+  </div>
+  <ng-template #noPayment>
+    <p>Данные о платеже не найдены.</p>
+  </ng-template>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  

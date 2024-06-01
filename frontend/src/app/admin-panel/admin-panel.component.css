@@ -1,0 +1,11 @@
+.nav-link.btn.btn-danger {
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  .nav-link.btn.btn-danger:hover {
+    background-color: darkred;
+  }
+  
