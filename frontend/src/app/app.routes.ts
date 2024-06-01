@@ -9,6 +9,8 @@ import { PaymentListComponent } from './payments/payment-list/payment-list.compo
 import { PaymentDetailComponent } from './payments/payment-detail/payment-detail.component';
 import { PasswordResetComponent } from './auth/password-reset/password-reset.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { PaymentComponent } from './payment/payment.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 export const routes: Routes = [
     { path: '', component: LandingPageComponent },
@@ -17,5 +19,11 @@ export const routes: Routes = [
     { path: 'payments', component: PaymentListComponent },
     { path: 'payments/:id', component: PaymentDetailComponent },
     { path: 'password-reset', component: PasswordResetComponent },
-    { path: 'admin', component: AdminPanelComponent }
+    { path: 'admin', component: AdminPanelComponent },
+    { path: 'pay/:id', component: PaymentComponent },
+    { path: 'profile', component: UserProfileComponent },
+    { path: 'payment/:id', component: PaymentComponent },
+    { path: 'user', component: UserProfileComponent },
+    // 404
+    { path: '**', redirectTo: '', pathMatch: 'full' }
   ];

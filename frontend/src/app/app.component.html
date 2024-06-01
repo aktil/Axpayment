@@ -11,6 +11,12 @@
       <li class="nav-item" *ngIf="isAuthenticated">
         <a class="nav-link" routerLink="/payments">Список платежей</a>
       </li>
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="/user">Мой аккаунт</a>
+      </li>
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="/payment/:id">Оплата</a>
+      </li>
       <li class="nav-item" *ngIf="isAdmin">
         <a class="nav-link" routerLink="/admin">Панель администратора</a>
       </li>
@@ -20,6 +26,6 @@
     </ul>
   </div>
 </nav>
-<div class="containers">
+<div class="container">
   <router-outlet></router-outlet>
 </div>

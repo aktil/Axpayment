@@ -1,0 +1,25 @@
+<div *ngIf="payment">
+    <p>Пользователь: {{ payment.user.username }}</p>
+    <p>Сумма: {{ payment.amount }}</p>
+    <p>Статус: {{ payment.status }}</p>
+    <p>QR Code URL: {{ payment.qr_code }}</p>
+    <img *ngIf="payment.qr_code" [src]="payment.qr_code" alt="QR Code" style="width:200px;height:200px;">
+    <button *ngIf="payment.status !== 'cancelled'" (click)="onCancel()" class="btn btn-warning">Cancel Payment</button>
+  
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="cardNumber">Card Number</label>
+        <input id="cardNumber" formControlName="cardNumber">
+      </div>
+      <div>
+        <label for="expiryDate">Expiry Date</label>
+        <input id="expiryDate" formControlName="expiryDate">
+      </div>
+      <div>
+        <label for="cvv">CVV</label>
+        <input id="cvv" formControlName="cvv">
+      </div>
+      <button type="submit" class="btn btn-primary">Подтвердить Платеж</button>
+    </form>
+  </div>
+  

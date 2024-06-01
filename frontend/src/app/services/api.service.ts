@@ -95,4 +95,19 @@ export class ApiService {
   getAllPayments(): Observable<Payment[]> {
     return this.http.get<Payment[]>(`${this.apiUrl}/payments/`, this.getAuthHeaders());
   }
+  processPayment(paymentId: number, paymentData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/payments/${paymentId}/process_payment/`, paymentData, this.getAuthHeaders(true));
+  }
+  getApiKeys(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/api-keys/`, this.getAuthHeaders());
+  }
+  
+  createApiKey(apiKeyData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api-keys/`, apiKeyData, this.getAuthHeaders(true));
+  }
+  
+  deleteApiKey(apiKeyId: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/api-keys/${apiKeyId}/`, this.getAuthHeaders(true));
+  }
+  
 }

@@ -1,0 +1,20 @@
+<div *ngIf="user">
+    <p>Имя пользователя: {{ user?.username }}</p>
+    <p>Email: {{ user?.email }}</p>
+  
+    <h3>API ключи</h3>
+    <form [formGroup]="apiKeyForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="shopName">Название магазина</label>
+        <input id="shopName" formControlName="shopName">
+      </div>
+      <button type="submit" class="btn btn-primary">Создать API ключ</button>
+    </form>
+  
+    <ul>
+      <li *ngFor="let key of apiKeys">
+        {{ key.shopName }}: {{ key.apiKey }}
+      </li>
+    </ul>
+  </div>
+  
